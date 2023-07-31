@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NW Bank Money Transfer</title>
+  <link rel="stylesheet" href="transfer.css">
+</head>
+<body>
+  <h1>Internal Money Transfer</h1>
+  <form id="transferForm">
+    <label for="fromAccount">From Account:</label>
+    <select id="fromAccount" name="fromAccount">
+      <!-- Populate the select options dynamically with account data from the server -->
+    </select>
+
+    <br><br>
+
+    <label for="toAccount">To Account:</label>
+    <select id="toAccount" name="toAccount">
+      <!-- Populate the select options dynamically with account data from the server -->
+    </select>
+
+    <br><br>
+
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" name="amount" min="0.01" step="0.01" required>
+
+    <br><br>
+
+    <input type="submit" value="Transfer Money">
+  </form>
+
+  <div id="message"></div>
+
+    
+  <script>
+    // Fetch account data from the server and populate the select options dynamically
+    fetch('/api/accounts')
+      .then(response => response.json())
+      .then(data => {
+        const fromAccountSelect = document.getElementById('fromAccount');
+        const toAccountSelect = document.getElementById('toAccount');
+
+        data.forEach(account => {
+          const option = document.createElement('option');
+          option.value = account.account_id;
+          option.textContent = `${account.first_name} ${account.last_name}`;
+          fromAccountSelect.appendChild(option);
+
+          const option2 = document.createElement('option');
+          option2.value = account.account_id;
+          option2.textContent = `${account.first_name} ${account.last_name}`;
+          toAccountSelect.appendChild(option2);
+        });
+      })
+      .catch(error => console.error('Error fetching account data:', error));
+
+    // Handle the form submission
+    const transferForm = document.getElementById('transferForm');
+    const messageDiv = document.getElementById('message');
+
+    transferForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(transferForm);
+
+      fetch('/api/transfer', {
+        method: 'POST',
+        body: formData,
+      })
+        .then(response => response.json())
+        .then(data => {
+          messageDiv.textContent = data.message;
+        })
+        .catch(error => console.error('Error transferring money:', error));
+    });
+  </script>
+</body>
+</html>

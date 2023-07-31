@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Banking Information</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+          <div class="navbar-brand">
+            <span class="logo">My Website</span>
+          </div>
+          <div class="navbar-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="navbar-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+    </nav>
+
+    <h1>General Banking Information</h1>
+    <h2>Hello, NAME</h2>
+    <div class="bank-info">
+        <div class="info-item">
+            <span class="label">Bank Name:</span> NW Bank
+        </div>
+        <!-- Rest of the content... -->
+        <div class="info-item">
+                <span class="label">Account Number:</span> 1234567890
+        </div>
+        <div>
+            <span class="label">Account Balance:</span> $1000
+        </div>
+        <!-- Line chart container -->
+        <div class="chart-container">
+            <canvas id="accountBalanceChart"></canvas>
+        </div>
+        <div>
+        <div class="transaction-list">
+            <label>Recent Transactions:</label>
+            <div class="transaction">
+                <span class="transaction-date">2023-07-29</span>
+                <span class="transaction-description">Payment from John Doe</span>
+                <span class="transaction-amount">+ $150.00</span>
+            </div>
+            <div class="transaction">
+                <span class="transaction-date">2023-07-28</span>
+                <span class="transaction-description">Grocery Shopping</span>
+                <span class="transaction-amount">- $65.00</span>
+            </div>
+            <!-- Add more transactions as needed -->
+            
+        </div>
+        <div class ="button-info">
+            <a href="deposit.html" class="btn">Deposit</a>
+        </div>
+        <div class = "button-info">
+            <a href="withdraw.html" class="btn">Withdraw</a>
+        </div>
+        <div class = "button-info">
+            <a href="transfer.html" class="btn">Transfer</a>
+        </div>
+        <div class="button-info">
+        <a href="accounts.html" class="btn">Accounts</a>
+        </div>
+    </div>
+
+    <!-- button navagation -->
+    <div class="button">
+        <a href="info.html" class="btn">Home</a>
+    </div>
+    <div class="button">
+        <a href="deposit.html" class="btn">Deposit</a>
+    </div>
+    <div class="button">
+        <a href="transaction.html" class="btn">Transaction</a>
+    </div>
+    <div class="button">
+        <a href="accounts.html" class="btn">Accounts</a>
+    </div>
+    <div class="button">
+        <a href="Index.html" class="btn">Logout</a>
+    </div>
+
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+
+    <script>
+        const navbarToggle = document.querySelector('.navbar-toggle');
+        const navbarMenu = document.querySelector('.navbar-menu');
+    
+        navbarToggle.addEventListener('click', () => {
+          navbarMenu.classList.toggle('active');
+        });
+    </script>
+
+
+    <!-- Script for generating the line chart -->
+    <script src="script.js"></script>
+</body>
+</html>

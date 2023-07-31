@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Transactions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Recent Transactions</h1>
+
+    <div class="filter-container">
+        <label>Filter:</label>
+        <label>
+            <input type="checkbox" name="filter" value="day">Last Day
+        </label>
+        <label>
+            <input type="checkbox" name="filter" value="month">Last Month
+        </label>
+        <label>
+            <input type="checkbox" name="filter" value="year">Last Year
+        </label>
+    </div>
+
+    <div class="transaction-list">
+        <div class="transaction">
+            <span class="transaction-date">2023-07-29</span>
+            <span class="transaction-description">Payment from John Doe</span>
+            <span class="transaction-amount">+ $150.00</span>
+        </div>
+        <div class="transaction">
+            <span class="transaction-date">2023-07-28</span>
+            <span class="transaction-description">Grocery Shopping</span>
+            <span class="transaction-amount">- $65.00</span>
+        </div>
+        <div class="transaction">
+            <span class="transaction-date">2023-08-29</span>
+            <span class="transaction-description">Payment from John Doe</span>
+            <span class="transaction-amount">+ $150.00</span>
+        </div>
+        <div class="transaction">
+            <span class="transaction-date">2023-08-28</span>
+            <span class="transaction-description">Ice Cream</span>
+            <span class="transaction-amount">- $15.00</span>
+        </div>
+        <div class="transaction">
+            <span class="transaction-date">2023-10-26</span>
+            <span class="transaction-description">Payment from Randy L.</span>
+            <span class="transaction-amount">+ $150.00</span>
+        </div>
+        <div class="transaction">
+            <span class="transaction-date">2023-11-27</span>
+            <span class="transaction-description">Clothing Shopping</span>
+            <span class="transaction-amount">- $125.00</span>
+        </div>
+        
+    </div>
+
+        <!-- button navagation -->
+    <div class="button">
+        <a href="info.html" class="btn">Home</a>
+        <a href="deposit.html" class="btn">Deposit</a>
+        <a href="transaction.html" class="btn">Transaction</a>
+        <a href="Index.html" class="btn">Logout</a>
+    </div>
+
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Script for generating the line chart -->
+    <script src="script.js"></script>
+</body>
+</html>

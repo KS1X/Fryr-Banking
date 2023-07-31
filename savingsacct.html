@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Account Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Savings Account Dashboard</h1>
+
+    <div class="savings-info">
+        <div class="current-amount">
+            <h2>Current Savings Amount</h2>
+            <p id="currentAmount">$5000.00</p>
+        </div>
+
+        <div class="interest-rate">
+            <h2>Annual Interest Rate</h2>
+            <p>4.15%</p>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="savingsChart"></canvas>
+    </div>
+
+    <div class="button">
+        <a href="info.html" class="btn">Home</a>
+    </div>
+    <div class="button">
+        <a href="deposit.html" class="btn">Deposit</a>
+    </div>
+    <div class="button">
+        <a href="transaction.html" class="btn">Transaction</a>
+    </div>
+    <div class="button">
+        <a href="accounts.html" class="btn">Accounts</a>
+    </div>
+    <div class="button">
+        <a href="Index.html" class="btn">Logout</a>
+    </div>
+
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Script for generating the savings chart -->
+    <script src="script.js"></script>
+</body>
+</html>
